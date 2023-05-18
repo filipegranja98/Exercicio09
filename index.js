@@ -18,16 +18,16 @@ const renderizaLista = (lista, tarefas) => {
     buttonDelete.id = "x";
     buttonDelete.innerHTML = "X";
     buttonDelete.onclick = () => deleteTask(tarefa.objectId);
-    const buttonUpdate = document.createElement("input");
-    buttonUpdate.type = 'checkbox';
-    buttonUpdate.checked = tarefa.done;
-    buttonUpdate.onclick = () => updateTask(tarefa);
+    const checkUpdate = document.createElement("input");
+    checkUpdate.type = 'checkbox';
+    checkUpdate.checked = tarefa.done;
+    checkUpdate.onclick = () => updateTask(tarefa);
     const listItem = document.createElement("li");
-    if(tarefa.done == true){
-        listItem.style.textDecoration = "line-through";
+    if(tarefa.done === true){
+        listItem.style.textDecoration = "line-through"; 
     }
     listItem.appendChild(itemText);
-    listItem.appendChild(buttonUpdate);
+    listItem.appendChild(checkUpdate);
     listItem.appendChild(buttonDelete);
     lista.appendChild(listItem);
   });
